@@ -22,8 +22,8 @@ int main()
     char speed[6];
     char height[5];
     int i;
-    fp1=fopen("");
-    fp2=fopen("");
+    fp1=fopen("//Users//qiuyu//Desktop//GPS sort//GPS170510.log","r");
+    fp2=fopen("//Users//qiuyu//Desktop//GPS dort//out.csv","w");
     while(fscanf(fp1,"%s%s",str1,str2)!=EOF)
     {
         printf("结果:%s\n%s\n",str1,str2);
@@ -62,20 +62,20 @@ int main()
             height[i]=str2[i+39];
             height[4]='\0';
         }
-        printf("UCT日月年:%s\n",date);
+        printf("UTC日月年:%s\n",date);
         printf("UTC小时:%s\n",time1);
         printf("UTC分秒:%s\n",time2);
         printf("纬度:%s\n",lat);
         printf("经度:%s\n",lon);
         printf("速率:%s\n",speed);
         printf("海拔:%s米\n",height);
-        fprintf(fp2,"UTC日月年:%s,",date);
-        fprintf(fp2,"UTC小时:%s,",time1);
-        fprintf(fp2,"UTC分秒:%s,",time2);
-        fprintf(fp2,"纬度:%s,",lat);
-        fprintf(fp2,"经度:%s,",lon);
-        fprintf(fp2,"速率:%s",speed);
-        fprintf(fp2,"海拔:%s米,\n",height);
+        fprintf(fp1,"UTC日月年:%s,",date);
+        fprintf(fp1,"UTC小时:%s,",time1);
+        fprintf(fp1,"UTC分秒:%s,",time2);
+        fprintf(fp1,"纬度:%s,",lat);
+        fprintf(fp1,"经度:%s,",lon);
+        fprintf(fp1,"速率:%s",speed);
+        fprintf(fp1,"海拔:%s米,\n",height);
     }
     fclose(fp1);
     fclose(fp2);
